@@ -1,4 +1,4 @@
-package com.github.julianvennen.spyglassmcjetbrains
+package me.vennen.spyglassmc
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

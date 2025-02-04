@@ -1,4 +1,4 @@
-package com.github.julianvennen.spyglassmcjetbrains.listeners
+package me.vennen.spyglassmc.listeners
 
 import com.intellij.openapi.application.ApplicationActivationListener
 import com.intellij.openapi.diagnostic.thisLogger

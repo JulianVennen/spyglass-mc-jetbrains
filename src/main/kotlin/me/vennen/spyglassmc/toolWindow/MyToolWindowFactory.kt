@@ -1,4 +1,4 @@
-package com.github.julianvennen.spyglassmcjetbrains.toolWindow
+package me.vennen.spyglassmc.toolWindow
 
 import com.intellij.openapi.components.service
 import com.intellij.openapi.diagnostic.thisLogger
@@ -8,8 +8,8 @@ import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.content.ContentFactory
-import com.github.julianvennen.spyglassmcjetbrains.MyBundle
-import com.github.julianvennen.spyglassmcjetbrains.services.MyProjectService
+import me.vennen.spyglassmc.MyBundle
+import me.vennen.spyglassmc.services.MyProjectService
 import javax.swing.JButton
 
 
