@@ -130,6 +130,22 @@ tasks {
         gradleVersion = providers.gradleProperty("gradleVersion").get()
     }
 
+    prepareSandbox {
+        doLast {
+            copy {
+                from("${project.projectDir}/../language-server/lib/")
+                into("${destinationDir.path}/spyglassmc/language-server/")
+            }
+            copy {
+                from("${project.projectDir}/../vscode-extension")
+                include("resource/**")
+                include("package*.json")
+                include("*-language-configuration.json")
+                into("${destinationDir.path}/spyglassmc/lang")
+            }
+        }
+    }
+
     publishPlugin {
         dependsOn(patchChangelog)
     }

@@ -5,10 +5,16 @@
     <vendor>JulianVennen</vendor>
 
     <depends>com.intellij.modules.ultimate</depends>
+    <depends>JavaScript</depends>
+    <depends>org.jetbrains.plugins.textmate</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <platform.lsp.serverSupportProvider implementation="me.vennen.spyglassmc.SpyglassLspServerSupportProvider"/>
+        <platform.lsp.serverSupportProvider implementation="me.vennen.spyglassmc.lsp.SpyglassLspServerSupportProvider"/>
+        <textmate.bundleProvider implementation="me.vennen.spyglassmc.SpyglassTextMateBundleProvider"/>
+    </extensions>
+    <extensions defaultExtensionNs="JavaScript.JsonSchema">
+        <ProviderFactory implementation="me.vennen.spyglassmc.schema.SpyglassJsonSchemaProviderFactory"/>
     </extensions>
 </idea-plugin>
