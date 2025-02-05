@@ -14,11 +14,36 @@ import com.intellij.platform.lsp.api.ProjectWideLspServerDescriptor
 
 @Suppress("UnstableApiUsage")
 class SpyglassLspServerDescriptor(project: Project) : ProjectWideLspServerDescriptor(project, "SpyglassMC") {
-    override fun isSupportedFile(file: VirtualFile) = arrayOf("mcfunction", "json").contains(file.extension)
+    override fun isSupportedFile(file: VirtualFile): Boolean {
+        if (arrayOf(
+            "mcfunction",
+            "mcdoc",
+            "snbt",
+            "mcmeta",
+        ).contains(file.extension)) {
+            return true
+        }
+
+        return file.extension == "json" && (hasParent(file, "data") && hasParent(file, "assets"))
+    }
+
+    private fun hasParent(file: VirtualFile, name: String): Boolean {
+        var parent = file.parent
+
+        while (parent != null) {
+            if (parent.name == name) {
+                return true
+            }
+
+            parent = parent.parent
+        }
+
+        return false
+    }
 
     override val lspGoToDefinitionSupport = true
-    override  val lspGoToTypeDefinitionSupport = true
-    override  val lspHoverSupport = true
+    override val lspGoToTypeDefinitionSupport = true
+    override val lspHoverSupport = true
 
     override fun createCommandLine(): GeneralCommandLine {
         val cmdConfigurator = NodeCommandLineConfigurator.find(getInterpreter());

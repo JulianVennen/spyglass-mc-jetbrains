@@ -14,6 +14,7 @@
         <platform.lsp.serverSupportProvider implementation="me.vennen.spyglassmc.lsp.SpyglassLspServerSupportProvider"/>
         <textmate.bundleProvider implementation="me.vennen.spyglassmc.SpyglassTextMateBundleProvider"/>
     </extensions>
+
     <extensions defaultExtensionNs="JavaScript.JsonSchema">
         <ProviderFactory implementation="me.vennen.spyglassmc.schema.SpyglassJsonSchemaProviderFactory"/>
     </extensions>

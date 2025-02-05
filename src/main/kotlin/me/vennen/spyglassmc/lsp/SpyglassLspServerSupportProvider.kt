@@ -11,8 +11,9 @@ class SpyglassLspServerSupportProvider : LspServerSupportProvider {
         file: VirtualFile,
         serverStarter: LspServerSupportProvider.LspServerStarter
     ) {
-        if (arrayOf("mcfunction", "json").contains(file.extension)) {
-            serverStarter.ensureServerStarted(SpyglassLspServerDescriptor(project))
+        val descriptor = SpyglassLspServerDescriptor(project);
+        if (descriptor.isSupportedFile(file)) {
+            serverStarter.ensureServerStarted(descriptor)
         }
     }
 }
