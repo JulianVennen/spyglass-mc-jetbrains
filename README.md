@@ -19,12 +19,24 @@
 ## Implementation ToDo list
 - [x] Bundle the Spyglass language server with the plugin
 - [ ] Cleanup README
-- [ ] Check compatibility with other JetBrains IDEs
+- [x] Check compatibility with other JetBrains IDEs
 - [ ] Find out why the VSCode extension registers an empty schema for various MC json files
 
 <!-- Plugin description -->
 Minecraft data pack support for JetBrains IDEs provided through [the Spyglass language server](https://spyglassmc.com/).
 <!-- Plugin description end -->
+
+## Supported IDEs
+Since this plugin requires LSP and JavaScript support the following IDEs are supported:
+- IntelliJ IDEA Ultimate
+- WebStorm
+- PhpStorm
+- PyCharm Professional
+- RubyMine
+- CLion
+- GoLand
+- Rider
+- RustRover
 
 ## Installation
 
