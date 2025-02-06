@@ -18,7 +18,6 @@
 
 ## Implementation ToDo list
 - [x] Bundle the Spyglass language server with the plugin
-- [ ] Add UI elements to restart the language server
 - [ ] Cleanup README
 - [ ] Check compatibility with other JetBrains IDEs
 - [ ] Find out why the VSCode extension registers an empty schema for various MC json files
