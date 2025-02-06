@@ -8,11 +8,9 @@
     <depends>JavaScript</depends>
     <depends>org.jetbrains.plugins.textmate</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
         <platform.lsp.serverSupportProvider implementation="me.vennen.spyglassmc.lsp.SpyglassLspServerSupportProvider"/>
-        <textmate.bundleProvider implementation="me.vennen.spyglassmc.SpyglassTextMateBundleProvider"/>
+        <textmate.bundleProvider implementation="me.vennen.spyglassmc.McMetaTextMateBundleProvider"/>
     </extensions>
 
     <extensions defaultExtensionNs="JavaScript.JsonSchema">

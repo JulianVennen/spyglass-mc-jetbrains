@@ -24,14 +24,17 @@ class SpyglassLspServerDescriptor(project: Project) : ProjectWideLspServerDescri
             return true
         }
 
-        return file.extension == "json" && (hasParent(file, "data") && hasParent(file, "assets"))
+        return file.extension == "json" && (hasParent(file, "data") || hasParent(file, "assets"))
     }
 
     private fun hasParent(file: VirtualFile, name: String): Boolean {
+        println("Full path: ${file.path}")
         var parent = file.parent
 
         while (parent != null) {
+            println("Parent: ${parent.name}")
             if (parent.name == name) {
+                println("Found parent: ${parent.name}")
                 return true
             }
 
@@ -46,7 +49,7 @@ class SpyglassLspServerDescriptor(project: Project) : ProjectWideLspServerDescri
     override val lspHoverSupport = true
 
     override fun createCommandLine(): GeneralCommandLine {
-        val cmdConfigurator = NodeCommandLineConfigurator.find(getInterpreter());
+        val cmdConfigurator = NodeCommandLineConfigurator.find(getInterpreter())
 
         return GeneralCommandLine().apply {
             withParentEnvironmentType(GeneralCommandLine.ParentEnvironmentType.CONSOLE)

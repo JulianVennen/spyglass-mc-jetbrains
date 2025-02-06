@@ -13,7 +13,7 @@ class SpyglassSchemaProvider : JsonSchemaFileProvider {
 
     override fun getSchemaFile(): VirtualFile? {
         val file = PluginPathManager.getPluginResource(javaClass, "lang/resource/spyglass.json")
-        if (file == null) {
+        if (file == null || !file.exists()) {
             return null
         }
 
