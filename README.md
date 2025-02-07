@@ -22,6 +22,9 @@
 - [x] Check compatibility with other JetBrains IDEs
 - [ ] Find out why the VSCode extension registers an empty schema for various MC json files
 
+## Migration to LSP4IJ ToDo list
+- [ ] Find replacement for locating nodejs
+
 <!-- Plugin description -->
 Minecraft data pack support for JetBrains IDEs provided through [the Spyglass language server](https://spyglassmc.com/).
 <!-- Plugin description end -->

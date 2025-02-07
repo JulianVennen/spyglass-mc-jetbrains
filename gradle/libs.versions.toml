@@ -1,6 +1,7 @@
 [versions]
 # libraries
 junit = "4.13.2"
+lsp4intellij = "3bd015c"
 
 # plugins
 changelog = "2.2.1"
@@ -11,6 +12,7 @@ qodana = "2024.3.4"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+lsp4intellij = { group = "com.github.ballerina-platform", name = "lsp4intellij", version.ref = "lsp4intellij" }
 
 [plugins]
 changelog = { id = "org.jetbrains.changelog", version.ref = "changelog" }
