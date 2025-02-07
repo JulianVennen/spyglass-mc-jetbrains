@@ -28,13 +28,10 @@ class SpyglassLspServerDescriptor(project: Project) : ProjectWideLspServerDescri
     }
 
     private fun hasParent(file: VirtualFile, name: String): Boolean {
-        println("Full path: ${file.path}")
         var parent = file.parent
 
         while (parent != null) {
-            println("Parent: ${parent.name}")
             if (parent.name == name) {
-                println("Found parent: ${parent.name}")
                 return true
             }
 
